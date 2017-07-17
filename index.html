@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Canvas Gamer</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Exo+2" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet">
+
+
+</head>
+<body>
+    <div class="container-fluid" style="overflow-x: hidden;">
+        <nav class="navigation navbar-nav navbar-fixed-top navbar-inverse" style="border-bottom: solid 2px red;">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="index.html" class="navbar-brand" style="color:#fff"><i>CanvasGamer</i></a>
+            </div>
+            <div class="container">
+       			 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                	<div class="container">
+                		<div class="row">
+                			<div class="col-xs-12 col-sm-10 col-md-8 col-lg-7">
+                				  <ul class="nav navbar-nav">
+				                    <li class="active"><a href="index.html">Games</a></li>
+				                    <li><a href="team.html">Meet the team</a></li>
+				                    <li><a href="about.html">About</a></li>
+				   
+				                </ul>
+                			</div>
+                			<div class="col-xs-12 col-sm-12 col-md-1 col-lg-3 input-form">
+                				 <form class="navbar-form navbar-left form-inline" role="search">
+						                     <div class="input-group">
+										      <input type="text" class="form-control" placeholder="Search for game..." style="border-radius: 0px;">
+										      <span class="input-group-btn">
+										        <button class="btn btn-secondary btn-danger" type="button" onclick="alert('Sorry. We need to add more games :( ')">Search!</button>
+										      </span>
+										    </div>
+			             	     </form>
+                			</div>
+                		</div>
+		              
+		              
+                	</div>
+        		</div> 	
+            </div>
+        </nav>
+
+        <div class="container" style="margin-top: 80px;" id="app">
+            <header>
+                <div class="row">
+                    <div class="col-md-10 col-sm-offset-1">
+                        <div class="container" style="margin-left: 14%;">
+                            <img src="img/logo1.png" class="img-responsive">
+                        </div>
+                         
+                        <hr />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-10 col-sm-offset-1">
+                        <h1 class="pull-left" style="margin-right:3%;" >Games Categories:</h1>
+                        <ul class="nav nav-pills" style="margin-top:23px;">
+                            <li role="presentation" v-bind:class="{active: isAll}" v-on:click="fu_all"><a>All</a></li>
+                            <li role="presentation" v-bind:class="{active: isPuzzle}"  v-on:click="fu_puzzle"><a>Puzzle</a></li>
+                            <li role="presentation" v-bind:class="{active: isPlatform}"  v-on:click="fu_platform"><a>Platform</a></li>
+                            <li role="presentation" v-bind:class="{active: isBricks}"  v-on:click="fu_bricks"><a>Bricks</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </header>
+            <section class="row" style="margin-top: 50px;">
+                <div class="col-sm-10 col-sm-offset-1">
+                    <div class="row">
+                      
+                        <div class="col-xs-6 col-sm-6 col-md-4 col-lg-3 text-center hover-class" v-if="puzzle">
+                            <a class="thumbnail" href="#" style="text-decoration: none; color:black;">
+                                    <img src="img/game1.jpg" alt="game" class="img-responsive">
+                                    <h4>Snake</h4>
+                                    <p><small>Snake is a Puzzle game where you have to control the snake and eat food without tauching the walls.</small></p>
+                            </a>
+                        </div>
+
+                        <div class="col-xs-6 col-sm-6 col-md-4 col-lg-3 text-center hover-class" v-if="puzzle">
+                            <a class="thumbnail" href="#" style="text-decoration: none; color:black;">
+                                <img src="img/game2.jpg" alt="game" class="img-responsive">
+                                <h4>Confusion</h4>
+                                <p><small>Confusion is a multi-level Puzzle game where you have to navigate the player without getting hit from the monsters.</small></p>
+                            </a>
+                        </div>
+
+                        <div class="col-xs-6 col-sm-6 col-md-4 col-lg-3 text-center hover-class all" v-if="bricks">
+                            <a class="thumbnail" href="#" style="text-decoration: none; color:black;">
+                                <img src="img/game3.jpg" alt="game" class="img-responsive">
+                                <h4>Panelpop</h4>
+                                <p><small>Panelpop is a Smaching games where you control a panel and hit the Bricks with the ball.</small></p>
+                            </a>
+                        </div>
+
+                        <div class="col-xs-6 col-sm-6 col-md-4 col-lg-3 text-center hover-class all" v-if="platform">
+                            <a class="thumbnail" href="#" style="text-decoration: none; color:black;">
+                                <img src="img/game4.jpg" alt="game" class="img-responsive">
+                                <h4>Slime Adventure</h4>
+                                <p><small>Slime adventure is a multi-level platform game where you can jump opsticals, kill enemies, while avoiding spikes and lava.</small></p>
+                            </a>
+                        </div>
+                    </div>
+               
+                    <div class="row text-center" style="margin: 20px;">
+                        <div class="col-sm-12">
+                            <button id="myButton" data-loading-text="Loading..." class="btn btn-danger" autocomplete="off" onclick="alert('Sorry. We need to add more games :( ')">Load More</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+    
+
+    <footer class="container-fluid " style="height: 330%;background: #ddd;">
+        <div class="row">
+            <div class="container" style="padding-top: 10px;">
+                <div class="col-xs-6 col-sm-4 col-md-4 col-lg-4 block-hover">
+                    <h3>Popular Games</h4>
+                    <ul class="list-unstyled" style="margin: 20px;font-size:15px;">
+                        <li><a href="#" class="h4">Snake</a></li>
+                        <li><a href="#" class="h4">Confusion</a></li>
+                        <li><a href="#" class="h4">Panelpop</a></li>
+                        <li><a href="#" class="h4">Slime Adventure</a></li>
+                       
+                    </ul>
+                </div>
+                <div class="col-xs-6 col-sm-4 col-md-4 col-lg-4 text-center">
+                    <div style="font-size: 30px;">
+                        <h3>You can contact us  <a href="mailto:nanorocks@outlook.com,babic22@gmail.com" style=" color:red;">HERE !!!</a></h3>
+                      
+                    </div>
+                </div>
+                <div class="col-xs-6 col-sm-4 col-md-4 col-lg-4 display-con block-hover">
+                    <h3>References</h3>
+                    <ul class="list-unstyled" style="margin: 20px;font-size:15px;">
+                        <li><a href="https://sites.google.com/view/grindpipe/home" target="_blank" class="h4">Grindpipe</a></li>
+                        <li><a href="https://www.scirra.com" target="_blank" class="h4">Scirra</a></li>
+                        <li><a href="https://github.com/nanorocks/canvasgamer.github.io" target="_blank" class="h4">GitHub</a></li>
+                        <li><a href="https://www.youtube.com/" target="_blank" class="h4">Youtube Walktrought</a></li>
+                        <li><a href="https://www.facebook.com/CanvasGamer-464917660506590/" target="_blank" class="h4">Facebook page</a></li>
+                    </ul>
+                </div>
+            </div>
+            <hr />
+
+            <div class="container">
+            	<p class="text-center text-muted">© Skopje, Macedonia, 1000.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="https://unpkg.com/vue"></script>
+    <script>
+    var app = new Vue({
+        el:"#app",
+        data:{
+            puzzle:true,
+            platform:true,
+            bricks: true,
+            /* For Menu */
+            isAll:true,
+            isBricks:false,
+            isPlatform:false,
+            isPuzzle:false 
+        },
+        methods:{
+            fu_puzzle: function() {
+                this.puzzle = true;
+                this.platform = this.bricks = false;
+                this.isPuzzle = true;
+                this.isAll = this.isBricks = this.isPlatform = false;
+            },
+            fu_platform: function()
+            {
+                this.platform = true;
+                this.bricks = this.puzzle = false;
+                this.isPlatform = true;
+                this.isBricks = this.isPuzzle = this.isAll = false;
+            },
+            fu_bricks: function(){
+                this.bricks = true;
+                this.platform = this.puzzle = false;
+                this.isBricks = true;
+                this.isPlatform = this.isPuzzle = this.isAll = false;
+            },
+            fu_all: function()
+            {
+                this.platform = this.bricks = this.puzzle = true;
+                this.isAll = true;
+                this.isBricks = this.isPlatform = this.isPuzzle = false;
+
+            }
+          
+        }
+
+
+    });
+
+    </script>
+</body>
+</html>

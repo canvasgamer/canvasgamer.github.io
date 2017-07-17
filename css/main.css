@@ -1,0 +1,59 @@
+ 
+    .btn{
+    	border-radius: 0px;
+    }
+    .nav-pills>li>a, .thumbnail {
+    	border-radius: 0px !important;
+    	
+    }
+   
+    .nav-pills>li.active>a, .nav-pills>li.active>a:focus, .nav-pills>li.active>a:hover{
+    	background-color: red !important;
+    }
+    .nav-pills li .active{
+    	color: white !important;
+    }
+    .nav-pills li a{
+    	color: red ;
+        
+    }
+    .nav-pills li a:hover{
+        border-bottom: 2px solid black !important;
+    }
+	
+   	@media screen and (max-width: 776px){
+   		.navigation{
+   			margin-top: -1px;
+   		}
+   		.navbar-header{
+   			padding-right: 15px;
+		    padding-left: 15px;
+		    margin-right: auto;
+		    margin-left: auto;
+   		}
+   		.display-con{
+   		    	display: none !important;
+   		}
+   		nav{
+   			margin-bottom: -15px;
+
+   		}
+
+
+   	}
+	@media screen and (max-width: 1200px) and (min-width: 777px){
+		.input-form{
+			display: none !important;
+		}
+
+	}
+    *{
+      font-family: 'Exo 2', sans-serif;
+    }
+
+   .hover-class a:hover{
+      color:red;
+     }
+     .block-hover ul li a:hover{
+        color: red;
+     }
